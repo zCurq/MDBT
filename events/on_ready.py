@@ -11,7 +11,6 @@ class on_ready(commands.Cog):
 
     @commands.Cog.listener()
     async def on_ready(self):
-        await sqlite.check_install()
         @tasks.loop(minutes=5) # Saniye için seconds, Saat için hour kullan.
         async def change_presence() -> None:
             statusMessages = [
